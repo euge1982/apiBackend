@@ -1,7 +1,7 @@
-//Archivo con las configuraciones para crear las instancias
+/*Archivo con las configuraciones para crear las
+instancias de la DB y la firma del token*/
 
-//Se traen los metodos de la libreria dotenv, con el require
-const { config } = require("dotenv");
+const { config } = require("dotenv");//Se traen los metodos de la libreria dotenv, con el require
 
 config();   //Carga la configuracion del archivo .env en process.env
 
@@ -14,5 +14,3 @@ module.exports = {   //Se exporta para que sea consumida por todo el proyecto
     password: process.env.DB_PASS,
     secretKey: process.env.SECRET_SEED,
 };
-
-//Se realiza la instancia de la DB y la firma del token

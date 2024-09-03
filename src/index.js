@@ -9,15 +9,15 @@ const main = () => {
         //Si ocurre un error al iniciar el servidor lo capturamos aca
         if (error) {
             console.error(`Error al iniciar el servidor: ${error.message}`);
-             // Se maneja el error y se envía una respuesta JSON al cliente
+             //Se maneja el error y se envía una respuesta JSON al cliente
             app.use((req, res) => {
                 res.status(500).json({
-                    success: false,
+                    ok: false,
                     message: "Error al iniciar el servidor",
                     error: err.message,
                 });
             });
-            return;   //Se usa para que a aplicacion no continue ejecutandose
+            return;   //Se usa para que la aplicacion no continue ejecutandose
         }
         else {
             //Si el servidor se inicia bien, se muestra este msj

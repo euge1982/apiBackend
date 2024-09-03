@@ -26,27 +26,17 @@ const generateJWT= async (user) => {
   const payload = {   //Se genera el payload con la informacion del usuario
     sub: user.id,
     username: user.username,
-    name: user.name,
+    name: user.nombre,
   };
 
-  //Se definen las opciones del token
-  const options = {   //Se le da una validez al token de 24 horas
-    expireIn: "24h",
+  //Se definen las opciones del token y el tiempo de expiracion
+  const options = {   
+    expiresIn: "24h",
   };
 
   //Se retorna el token
-  return jwt.sign(payload,config.secretKey, options);
+  return jwt.sign( payload, config.secretKey, options );
 
-  //Se puede hacer esto para manejar los errores en vez de solo retornar
-  /*try {
-    //Genera y retorna el token JWT
-    return jwt.sign(payload, config.secretKey, options);
-  } 
-  catch (error) {
-    //Maneja errores en la generacion del token
-    console.error('Error generating JWT:', error);
-    throw new Error('Error generating JWT'); //Lanza un error si la generacion falla
-  }*/
 };
 
 //Se exportan las funciones

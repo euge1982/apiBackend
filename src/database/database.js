@@ -13,10 +13,6 @@ const connection = mysql.createConnection({
 });
 
 //Funcion para obtener la conexion a la DB
-/*const getConnection = () => {
-    console.log("Conectado a la DB");
-    return connection;
-};*/
 const getConnection = async () => {
     try {
         console.log("Conectado a la DB");
@@ -28,5 +24,6 @@ const getConnection = async () => {
         throw new Error('Conexion fallida');  //Lanza un error
     }
 };
-//Obtiene la conexion y retorna
+
+//Obtiene la conexion y la retorna
 module.exports = { getConnection };
